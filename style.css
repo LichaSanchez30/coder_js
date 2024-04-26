@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.galeria{
+    width: 95vw;
+    margin: 0 auto;
+}
+.galeria img{
+    width: 100%;
+    height: 700px;
+}
+.alto{
+    height: 800px;
+}
+
+.main{
+    display: grid;
+    height: max-content;
+    grid-template-columns: 15% auto;
+    grid-template-rows: auto;
+    border: solid red;
+}
+.filtros{
+    display: flex;
+    margin-left:40px;
+    align-items: center;
+    flex-direction: column;
+    background-color:grey;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 25px;
+}
+.filtros h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+.filtro_style{
+    margin-top: 20px;
+    
+}
+.filtro_gral{
+    display: flex;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+    margin-top: 25px;
+}
+.filtro_gral p{
+    width: 120px;
+    margin: 0;
+    margin-right: 10px;
+}
+#productos{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 25px 20px 0 0;
+}
+.cardProduct{
+    height:28rem;
+    padding: 10px;
+}
+.cardProduct div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center ;
+    padding: 3px;
+}
+.cardProduct img{
+    height: 270px;
+}
+.cardProduct p{
+    width: 100%;
+    font-weight:500;
+    font-size: 18px;
+}
+
+.carrito_compras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid green;
+}
+.tabla_carrito{
+    border: solid black;
+    width: 500px;
+    text-align: center;
+}
