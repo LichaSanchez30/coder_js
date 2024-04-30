@@ -3,6 +3,22 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.container-nav{
+   display: block;
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+    justify-content: start;
+    position: relative;
+}
+.mejora-responsive{
+    position: absolute;
+    right: 50px;
+}
+
+.btn-carro{
+    margin-left: 50px;
+}
 .galeria{
     width: 95vw;
     margin: 0 auto;
@@ -20,7 +36,6 @@
     height: max-content;
     grid-template-columns: 15% auto;
     grid-template-rows: auto;
-    border: solid red;
 }
 .filtros{
     display: flex;
@@ -83,10 +98,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid green;
 }
 .tabla_carrito{
-    border: solid black;
     width: 500px;
     text-align: center;
 }
