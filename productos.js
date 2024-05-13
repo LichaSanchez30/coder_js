@@ -121,6 +121,3 @@ const productosDeportivos = [
     }
 ];
 
-for (const iterator of productosDeportivos) {
-    console.log(iterator.categoria)
-}
