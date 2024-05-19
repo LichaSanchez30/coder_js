@@ -13,41 +13,29 @@
 <body>
     <header class="cabecera">
         <div class="menu">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary navb">
-                <div class="container-fluid container-nav">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <div class="mejora-responsive">
-                        <button class="navbar-toggler nav-menu" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Dropdown
-                                </a>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                    <button class="btn-carro">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-                    </div>
-                    
-                </div>
-
-                 
+            
+            <nav class="navb">
+                <div class="logo">
+                <img src="img/logo_js2.png" alt="">
+            </div>
+                <button class="btn-carrito" id="btn-carrito">
+                   <i class="fa-solid fa-cart-plus carrito "></i>
+                </button>    
             </nav>
+        </div>
+        <div id="carrito_compras" class="carrito_compras">
+            <table class="tabla_carrito table-striped">
+                <thead>
+                    <tr>
+                        <th>Pro ID</th>
+                        <th>Nombre</th>
+                        <th>Cant.</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito_prod"></tbody>
+            </table>
+            <h4 id="total">Total a pagar: $ <span id="totalAPagar"></span> </h4>
         </div>
         <div class="galeria">
             <img src="img/Manchester_city.png" alt="" />
@@ -55,6 +43,7 @@
     </header>
 
     <main>
+        
         <section class="main">
             <div class="filtros">
                 <article class="filtro_style">
@@ -105,20 +94,6 @@
                 </article>
             </div>
             <div id="productos" class="row"></div>
-        </section>
-
-        <section id="carrito_compras" class="carrito_compras">
-            <table class="tabla_carrito table-striped">
-                <thead>
-                    <tr>
-                        <th>Pro ID</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody id="carrito_prod"></tbody>
-            </table>
-            <h4 id="total">Total a pagar $:</h4>
         </section>
     </main>
 

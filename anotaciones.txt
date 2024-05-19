@@ -1,0 +1,28 @@
+function filtroGral(valorFiltro) {
+  let filtrado = document.getElementsByName('filtro');
+  let filtrar = [];
+  let valorSeleccionado;
+  for (const iterator of filtrado) {
+    iterator.addEventListener('click', () => {
+      valorSeleccionado = iterator.value;
+      if (!isNaN(valorSeleccionado) == false) {
+        if (valorSeleccionado == "ver todos") {
+          verProd.innerHTML = "";
+          productos(valorFiltro);
+          carrito(valorFiltro);
+
+        } else {
+          filtrar = valorFiltro.filter(prod => prod.categoria == valorSeleccionado)
+          verProd.innerHTML = "";
+          productos(filtrar)
+          carrito(filtrar)
+
+        }
+      } else {
+        filtrar = valorFiltro.filter(prod => prod.precio < valorSeleccionado)
+        verProd.innerHTML = "";
+        productos(filtrar)
+        carrito(filtrar)
+      }
+    })
+  }

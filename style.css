@@ -3,25 +3,78 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-.container-nav{
-   display: block;
-}
-.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
-    justify-content: start;
+.cabecera{
     position: relative;
 }
-.mejora-responsive{
-    position: absolute;
-    right: 50px;
+.menu{
+    display: flex;
+    width: 100%;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+}
+.logo{
+    height: 60px;
+
+}
+.logo img{
+    height: 60px
 }
 
-.btn-carro{
+.navb{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #141111;
+}
+.btn-carrito{
     margin-left: 50px;
+    border: none;
+    color: whitesmoke;
+    background-color: transparent;
+}
+.carrito:hover{
+    color: yellow;
+}
+
+.carrito_compras{
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    background-color: rgb(185, 175, 175);
+    top: 70px;
+    right: 39px;
+    width: 700px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.tabla_carrito{
+    width: 500px;
+    text-align: center;
+}
+.borrarProd{
+    display: flex;
+    background-color: whitesmoke;
+    padding: 0px;
+    border: none;
+    border-radius: 50%;
+}
+.borrarProd i{
+    color: red;
+    padding: 0px;
+    font-size:20px ;
+}
+.borrarProd i:hover{
+    color: yellow;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
 }
 .galeria{
     width: 95vw;
-    margin: 0 auto;
+    margin: 90px auto;
 }
 .galeria img{
     width: 100%;
@@ -93,13 +146,3 @@
     font-size: 18px;
 }
 
-.carrito_compras{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tabla_carrito{
-    width: 500px;
-    text-align: center;
-}
