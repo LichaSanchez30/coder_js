@@ -58,8 +58,10 @@ function filtroGral(valorFiltro) {
       }
       mostrarProductos(filtrar);
       carrito(filtrar)
+      mostrarCarrito();
     });
   }
+  
 }
 
 function mostrarProductos(productosMostrar) {
@@ -75,14 +77,17 @@ function mostrarProductos(productosMostrar) {
         </div>
       </div>
     `;
+    
   }
+  mostrarCarrito();
+  
 }
 function carrito(prods) {
   //Agregar producto al carrito de compras.
   const btnComprar = document.getElementsByClassName('boton');
   for (const comprar of btnComprar) {
     comprar.addEventListener('click', () => {
-      const aCarrito = prods.find(prod => prod.id == comprar.id);
+           const aCarrito = prods.find(prod => prod.id == comprar.id);
       carritoLocal(aCarrito)
       actualizarDom();
       
@@ -91,36 +96,48 @@ function carrito(prods) {
 }
 function carritoLocal(saveCarro) {
   const productoExistente = carro.find(prod => prod.id == saveCarro.id);
+  Swal.fire({
+    title: "Bien hecho!!",
+    text: `Agregaste ${saveCarro.nombre} al carrito🛒`,
+    icon: "success"
+  });
   if (productoExistente) {
     productoExistente.cantidad += 1;
   } else {
     saveCarro.cantidad = 1;
     carro.push(saveCarro);
   }
-  localStorage.setItem('savePro', JSON.stringify(carro));
+  // localStorage.setItem('savePro', JSON.stringify(carro));
 
 }
 
 function actualizarDom() {
    const total = document.getElementById('totalAPagar');
   const prodTabla = document.getElementById('carrito_prod');
-  const saveProd = JSON.parse(localStorage.getItem('savePro')) || [];
+  // const saveProd = carro;
+  // const saveProd = JSON.parse(localStorage.getItem('savePro')) || [];
   prodTabla.innerHTML = "";
-  for (const iterator of saveProd) {
+  for (const iterator of carro) {
+    
     if(iterator)
     prodTabla.innerHTML += `
             <tr>
                 <td>${iterator.id}</td>
+                <td class ='img_prod'> <img src='${iterator.img}' alt =''></td>
                 <td>${iterator.nombre}</td>
                 <td>${iterator.cantidad}</td>
                 <td>${iterator.precioCard}</td>
                 <td><button class='borrarProd'id='${iterator.id}'><i class="fa-sharp fa-solid fa-circle-xmark"></i></button></td>
             </tr>
         `;
-    
-   
+        
   };
-  const totalAPagar = saveProd.reduce((acumulador, elemento) => acumulador + (elemento.precio * elemento.cantidad), 0);
+  const totalAPagar = carro.reduce((acumulador, elemento) => acumulador + (elemento.precio * elemento.cantidad), 0);
+  const acumulador = carro.reduce((acumulador, elemento) => acumulador + elemento.cantidad, 0);
+
+  acumuladorCarrito(acumulador)
+
+  console.log(acumulador)
   total.innerText = totalAPagar;
 
   const btnEliminar = document.getElementsByClassName('borrarProd');
@@ -130,8 +147,13 @@ function actualizarDom() {
     });
   }
   
-
 }
+function acumuladorCarrito(cantCarrito){
+  const cant_productos = document.getElementById('cant-productos')
+  cant_productos.innerHTML = cantCarrito;
+}
+
+
 function eliminarProducto(id) {
   const producto = carro.find(prod => prod.id == id);
   if (producto.cantidad > 1) {
@@ -139,7 +161,6 @@ function eliminarProducto(id) {
   } else {
     carro = carro.filter(prod => prod.id != id);
   }
-  localStorage.setItem('savePro', JSON.stringify(carro));
   actualizarDom();
 }
 
@@ -149,9 +170,11 @@ function mostrarCarrito(){
   const contenedorCarrito = document.getElementById('carrito_compras');
   btn_carrito.addEventListener('click', ()=>{
       if(contenedorCarrito.style.display === 'flex'){
-          contenedorCarrito.style.display = 'none';
-      } else {
-          contenedorCarrito.style.display = 'flex';
+      contenedorCarrito.style.display = 'none';
+
+    }else{
+      contenedorCarrito.style.display = 'flex';
+
     }
   });
 

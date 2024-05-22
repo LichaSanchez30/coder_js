@@ -13,13 +13,17 @@
 <body>
     <header class="cabecera">
         <div class="menu">
-            
+           
             <nav class="navb">
-                <div class="logo">
+                 <div class="logo">
                 <img src="img/logo_js2.png" alt="">
+            </div>
+            <div class="navegacion">
+                <h4>Productos</h4>
             </div>
                 <button class="btn-carrito" id="btn-carrito">
                    <i class="fa-solid fa-cart-plus carrito "></i>
+                   <span class="cant-productos" id="cant-productos"></span>
                 </button>    
             </nav>
         </div>
@@ -28,6 +32,7 @@
                 <thead>
                     <tr>
                         <th>Pro ID</th>
+                        <th></th>
                         <th>Nombre</th>
                         <th>Cant.</th>
                         <th>Precio</th>
@@ -103,6 +108,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/ef83b7174f.js" crossorigin="anonymous"></script>
     <script src="productos.js"></script>
     <script src="logica.js"></script>
